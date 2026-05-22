@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "bot"
+		},
+		{
+			"path": "core"
+		},
+		{
+			"path": "infra"
+		},
+		{
+			"path": "vision"
+		}
+	]
+}
