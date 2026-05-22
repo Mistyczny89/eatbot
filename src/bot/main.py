@@ -1,12 +1,24 @@
-from core.config import Config
+import cv2
+
+from infra.scrcpy_stream import ScrcpyStream
 
 
 def main():
-    print("BOT START")
 
-    cfg = Config()
+    stream = ScrcpyStream()
+    stream.start()
 
-    print("CONFIG LOADED:", cfg)
+    while True:
+
+        gray = stream.get_gray()
+
+        if gray is None:
+            continue
+
+        cv2.imshow("stream", gray)
+
+        if cv2.waitKey(1) == ord("q"):
+            break
 
 
 if __name__ == "__main__":
